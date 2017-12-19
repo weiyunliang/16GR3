@@ -1,9 +1,9 @@
 #MyEclipse Hibernate Properties
-#Fri Sep 08 19:30:00 CST 2017
+#Tue Dec 12 19:45:39 CST 2017
 genVersionTag=false
-sessionFactoryName=com.qhit.lh.gr3.yzs.t2.utils.HibernateSessionFactory
+sessionFactoryName=com.qhit.lh.gu3b.hzz.t2.utils.HibernateSessionFactory
 genAnnotations=false
-configFile=/HBT2/src/hibernate.cfg.xml
+configFile=/HBMT02/src/hibernate.cfg.xml
 reStrategyClass=
 sessionFactoryId=
 profile=

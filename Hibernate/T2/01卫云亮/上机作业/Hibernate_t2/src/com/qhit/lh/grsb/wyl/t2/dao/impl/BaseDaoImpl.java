@@ -9,67 +9,78 @@ import org.hibernate.Transaction;
 import com.qhit.lh.grsb.wyl.t2.dao.BaseDao;
 import com.qhit.lh.grsb.wyl.t2.utils.HibernateSessionFactory;
 
+
+
+
+
+/**
+ * @author 卫云亮
+ *TODO
+ *2017年12月12日上午10:16:34
+ */
 public class BaseDaoImpl implements BaseDao {
 
 	@Override
 	public void add(Object obj) {
-		// TODO Auto-generated method stub
-		//��ȡsession����
-		Session session = HibernateSessionFactory.getSession();
-		//��������
-		Transaction ts = session.beginTransaction();
-		//ִ��
-		session.save(obj);
-		//�ύ����
-		ts.commit();
-		//�ͷ���Դ
-		HibernateSessionFactory.closeSession();
+		//1.获取session对象
+		  Session session = HibernateSessionFactory.getSession();
+		//2.开启事务
+		  Transaction ts = session.beginTransaction();
+		//3.执行
+		  session.save(obj);
+        //4.提交事务
+		  ts.commit();
+		 //5.释放资源
+		  HibernateSessionFactory.closeSession();
+  
 	}
 
 	@Override
-	public void delect(Object obj) {
-		// TODO Auto-generated method stub
-		//��ȡsession����
-				Session session = HibernateSessionFactory.getSession();
-				//��������
-				Transaction ts = session.beginTransaction();
-				//ִ��
-				session.delete(obj);
-				//�ύ����
-				ts.commit();
-				//�ͷ���Դ
-				HibernateSessionFactory.closeSession();
+	public void del(Object obj) {
+		//1.获取session对象
+		  Session session = HibernateSessionFactory.getSession();
+		//2.开启事务
+		  Transaction ts = session.beginTransaction();
+		//3.执行
+		  session.save(obj);
+      //4.提交事务
+		  ts.commit();
+		 //5.释放资源
+		  HibernateSessionFactory.closeSession();
+
 	}
 
 	@Override
-	public void update(Object obj) {
-		// TODO Auto-generated method stub
-		//��ȡsession����
-		Session session = HibernateSessionFactory.getSession();
-		//��������
-		Transaction ts = session.beginTransaction();
-		//ִ��
-		session.update(obj);
-		//�ύ����
-		ts.commit();
-		//�ͷ���Դ
-		HibernateSessionFactory.closeSession();
+	public void upd(Object obj) {
+		//1.获取session对象
+		  Session session = HibernateSessionFactory.getSession();
+		//2.开启事务
+		  Transaction ts = session.beginTransaction();
+		//3.执行
+		  session.save(obj);
+      //4.提交事务
+		  ts.commit();
+		 //5.释放资源
+		  HibernateSessionFactory.closeSession();
+
 	}
 
 	@Override
-	public List<Object> getAll(String fromObject) {
-		//��ȡsession����
-				Session session = HibernateSessionFactory.getSession();
-				//��������
-				Transaction ts = session.beginTransaction();
-				//ִ��
-				Query query = session.createQuery(fromObject);
-				List<Object> list = query.list();
-				//�ύ����
-				ts.commit();
-				//�ͷ���Դ
-				HibernateSessionFactory.closeSession();
-		return list;
+	public List<Object> getALl(String fromObject) {
+		//1.获取session对象
+		  Session session 	= HibernateSessionFactory.getSession();
+		//2.开启事务
+		  Transaction ts = session.beginTransaction();
+		//3.执行
+		Query query  =session.createQuery(fromObject);
+		query.list();
+        //4.提交事务
+		  ts.commit();
+		 //5.释放资源
+		  HibernateSessionFactory.closeSession();
+
+		
+		return null;
 	}
 
 }

@@ -1,12 +1,13 @@
-package com.qhit.lh.grsb.wyl.t2.servcie.impl;
+package com.qhit.lh.grsb.wyl.t4.service.impl;
 
 import java.util.List;
 
-import com.qhit.lh.grsb.wyl.t2.dao.BaseDao;
-import com.qhit.lh.grsb.wyl.t2.dao.impl.BaseDaoImpl;
-import com.qhit.lh.grsb.wyl.t2.servcie.UserService;
+import com.qhit.lh.grsb.wyl.t4.dao.BaseDao;
+import com.qhit.lh.grsb.wyl.t4.dao.impl.BaseDaoImpl;
+import com.qhit.lh.grsb.wyl.t4.service.BaseService;
 
-public class UserServiceImpl implements UserService {
+public class BaseServiceImpl implements BaseService {
+
 	private BaseDao baseDao = new BaseDaoImpl();
 
 	@Override
@@ -16,9 +17,9 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public void delect(Object obj) {
+	public void delete(Object obj) {
 		// TODO Auto-generated method stub
-		baseDao.delect(obj);
+		baseDao.delete(obj);
 	}
 
 	@Override
@@ -33,4 +34,9 @@ public class UserServiceImpl implements UserService {
 		return baseDao.getAll(fromObject);
 	}
 
+	@Override
+	public Object getObjectById(Class clazz, int id) {
+		// TODO Auto-generated method stub
+		return baseDao.getObjectById(clazz, id);
+	}
 }
